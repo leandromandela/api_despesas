@@ -1,3 +1,20 @@
+🚫 Direitos Autorais🚫
+Este projeto e todo o seu conteúdo (código-fonte, arquivos, imagens, scripts, etc.) são protegidos por direitos autorais.
+
+© Leandro Mandela T de Souza - 2025
+Todos os direitos reservados.
+
+É proibido:🚫🚫🚫🚫🚫
+
+Copiar, modificar, redistribuir ou reutilizar qualquer parte deste código ou conteúdo sem autorização expressa e por escrito do(s) autor(es).
+
+Utilizar este código, total ou parcialmente, para fins comerciais ou acadêmicos sem permissão.
+
+A violação de qualquer um desses termos pode resultar em ações legais conforme a legislação vigente de direitos autorais (Lei nº 9.610/98 no Brasil ou equivalente em outros países).
+
+Caso tenha interesse em utilizar ou colaborar com este projeto, entre em contato pelo GitHub: mensagens pelo GitHub
+
+
 API de Gerenciamento de Despesas
 Este projeto é uma API RESTful desenvolvida com Node.js, Express e MongoDB, com autenticação JWT, ideal para o controle pessoal de despesas financeiras. A API permite o cadastro de usuários, autenticação, criação e listagem de despesas protegidas por token.
 

@@ -1,0 +1,130 @@
+Instalação e Execução do Projeto
+Pré-requisitos
+Antes de começar, certifique-se de ter instalado:
+
+Node.js
+
+MongoDB (local ou MongoDB Atlas)
+
+Git (opcional, mas recomendado)
+
+Passo a passo
+Clone o repositório:
+
+bash
+Copiar
+Editar
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+Instale as dependências:
+
+bash
+Copiar
+Editar
+npm install
+Configure o arquivo .env:
+
+Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
+
+ini
+Copiar
+Editar
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/despesas
+JWT_SECRET=seuSegredoJWT
+Altere o valor da variável MONGO_URI se estiver usando o MongoDB Atlas.
+
+Inicie o servidor:
+
+bash
+Copiar
+Editar
+npm run dev
+O servidor estará disponível em:
+http://localhost:3000
+
+Exemplos de Requisições
+Registro de Usuário
+POST /api/auth/register
+
+json
+Copiar
+Editar
+{
+  "nome": "Maria",
+  "email": "maria@example.com",
+  "senha": "123456"
+}
+Login
+POST /api/auth/login
+
+json
+Copiar
+Editar
+{
+  "email": "maria@example.com",
+  "senha": "123456"
+}
+Resposta esperada:
+
+json
+Copiar
+Editar
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR..."
+}
+Criar Despesa (com token)
+POST /api/despesas
+
+Headers:
+
+makefile
+Copiar
+Editar
+Authorization: Bearer <token>
+Body:
+
+json
+Copiar
+Editar
+{
+  "descricao": "Supermercado",
+  "valor": 150.75,
+  "categoria": "Alimentação"
+}
+Listar Despesas
+GET /api/despesas
+
+Headers:
+
+makefile
+Copiar
+Editar
+Authorization: Bearer <token>
+Atualizar Despesa
+PUT /api/despesas/:id
+
+Headers:
+
+makefile
+Copiar
+Editar
+Authorization: Bearer <token>
+Body:
+
+json
+Copiar
+Editar
+{
+  "descricao": "Farmácia",
+  "valor": 89.90
+}
+Deletar Despesa
+DELETE /api/despesas/:id
+
+Headers:
+
+makefile
+Copiar
+Editar
+Authorization: Bearer <token>

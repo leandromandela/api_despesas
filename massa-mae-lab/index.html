@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Massa Mãe Lab - Pães artesanais com fermentação natural">
+    <meta name="theme-color" content="#e09e6a">
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    
+    <title>Massa Mãe Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🥖 Massa Mãe Lab</h1>
+            <p class="subtitle">Pães artesanais com fermentação natural</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Seção de Fornada em Tempo Real -->
+            <section class="fornada-section">
+                <h2 class="section-title">Fornada em Andamento</h2>
+                <div class="fornada-card">
+                    <div class="fornada-info">
+                        <div class="fornada-header">
+                            <span class="fornada-label">Status da Fornada</span>
+                            <span class="fornada-percentage" id="fornada-percentage">0%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+                        <p class="fornada-status" id="fornada-status">Preparando a massa...</p>
+                    </div>
+                    <div class="fornada-timer">
+                        <span class="timer-icon">⏱️</span>
+                        <span class="timer-text" id="timer-text">Tempo estimado: 5 min</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Produtos -->
+            <section class="produtos-section">
+                <h2 class="section-title">Nossos Pães</h2>
+                <div class="produtos-grid">
+                    
+                    <!-- Produto 1 -->
+                    <div class="produto-card">
+                        <div class="produto-image">
+                            <div class="image-placeholder">🥖</div>
+                        </div>
+                        <div class="produto-info">
+                            <h3 class="produto-nome">Pão de Massa Mãe Clássico</h3>
+                            <p class="produto-descricao">Fermentação natural de 24h</p>
+                            <div class="produto-footer">
+                                <span class="produto-preco">R$ 18,00</span>
+                                <button class="btn-comprar" data-produto="Pão Clássico" disabled>
+                                    <span class="btn-icon">🛒</span>
+                                    <span>Aguardando fornada</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 -->
+                    <div class="produto-card">
+                        <div class="produto-image">
+                            <div class="image-placeholder">🌾</div>
+                        </div>
+                        <div class="produto-info">
+                            <h3 class="produto-nome">Pão Integral com Sementes</h3>
+                            <p class="produto-descricao">Girassol, linhaça e gergelim</p>
+                            <div class="produto-footer">
+                                <span class="produto-preco">R$ 22,00</span>
+                                <button class="btn-comprar" data-produto="Pão Integral" disabled>
+                                    <span class="btn-icon">🛒</span>
+                                    <span>Aguardando fornada</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3 -->
+                    <div class="produto-card">
+                        <div class="produto-image">
+                            <div class="image-placeholder">🥐</div>
+                        </div>
+                        <div class="produto-info">
+                            <h3 class="produto-nome">Croissant Artesanal</h3>
+                            <p class="produto-descricao">Manteiga francesa e laminação perfeita</p>
+                            <div class="produto-footer">
+                                <span class="produto-preco">R$ 12,00</span>
+                                <button class="btn-comprar" data-produto="Croissant" disabled>
+                                    <span class="btn-icon">🛒</span>
+                                    <span>Aguardando fornada</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4 -->
+                    <div class="produto-card">
+                        <div class="produto-image">
+                            <div class="image-placeholder">🍞</div>
+                        </div>
+                        <div class="produto-info">
+                            <h3 class="produto-nome">Pão de Centeio</h3>
+                            <p class="produto-descricao">Sabor marcante e textura única</p>
+                            <div class="produto-footer">
+                                <span class="produto-preco">R$ 20,00</span>
+                                <button class="btn-comprar" data-produto="Pão de Centeio" disabled>
+                                    <span class="btn-icon">🛒</span>
+                                    <span>Aguardando fornada</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção de Instalação -->
+            <section class="install-section" id="install-section" style="display: none;">
+                <div class="install-card">
+                    <div class="install-icon">📱</div>
+                    <div class="install-content">
+                        <h3>Instale nosso app!</h3>
+                        <p>Receba notificações quando novos pães estiverem prontos</p>
+                        <button class="btn-install" id="btn-install">Instalar App</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Massa Mãe Lab — Feito com ❤️ e fermentação natural.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">🥖</span>
+        <span class="toast-message" id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
